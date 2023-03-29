@@ -6,10 +6,11 @@ import { Routes, Route, Outlet } from "react-router";
 import Loading from "./pages/loading/Loading";
 import Layout from "./components/layout/Layout";
 import Home from "./pages/home/Home";
+import { default_Theme, default_ThemeType } from "./styles/themes/default_Theme";
 
 const App: React.FC = () => {
 	return (
-		<ThemeProvider theme={{}}>
+		<ThemeProvider theme={default_Theme as default_ThemeType}>
 			<GlobalStyle />
 
 			<Suspense fallback={<Loading />}>

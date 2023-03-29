@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
+import Navbar from "../navbar/Navbar";
 
 interface Props {
 	children: React.ReactNode;
@@ -9,8 +10,10 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
 	return (
 		<Main>
-			<Header></Header>
 			<Content>{children}</Content>
+			<Footer>
+				<Navbar />
+			</Footer>
 		</Main>
 	);
 };
@@ -20,18 +23,22 @@ const Main = styled(motion.main)(
   background: grey;
   height: inherit;
   overflow-y: scroll;
+	display: flex;
+	flex-direction: column;
 `
 );
 
-const Header = styled(motion.section)(
+const Footer = styled(motion.section)(
 	({ theme }) => `
-  
+	background: yellow;
+  flex: 1 1 fit-content;
 `
 );
 
 const Content = styled(motion.section)(
 	({ theme }) => `
-  
+  flex: 25 25 fit-content;
+	background: green;
 `
 );
 
