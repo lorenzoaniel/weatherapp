@@ -1,8 +1,12 @@
 import { motion } from "framer-motion";
 import React from "react";
-import styled, { DefaultTheme, useTheme } from "styled-components";
-import Navbar from "../navbar/Navbar";
+import styled, { useTheme } from "styled-components";
+
 import { default_motion } from "../../styles/default_motion";
+
+import Navbar from "../navbar/Navbar";
+import { useAppSelector } from "../../redux/hooks";
+import { selectWeatherApi } from "../../redux/features/weatherApiSlice";
 
 interface Props {
 	children: React.ReactNode;
@@ -10,10 +14,12 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
 	const theme = useTheme();
+	let apiInfo = useAppSelector(selectWeatherApi);
 
-	//TODO: replace static "season" with dynamic redux from API
+	let season = apiInfo.season;
+
 	return (
-		<Main {...default_motion} variants={_MotionVariants(theme, "winter").Main}>
+		<Main {...default_motion} variants={_MotionVariants(theme, season).Main}>
 			<Content>{children}</Content>
 			<Footer>
 				<Navbar />

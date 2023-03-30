@@ -29,12 +29,11 @@ const Navbar: React.FC = () => {
 
 const Main = styled(motion.nav)(
 	({ theme }) => `
-	background: red;
+	// background: ;
 	height: 100%;
   display: flex;
 	justify-content: space-around;
 
-	// margin: 1.5rem;
 	padding: 0.5rem;
 `
 );

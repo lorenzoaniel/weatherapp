@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+import React, { Suspense, createContext } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import styled, { ThemeProvider } from "styled-components";
 import { GlobalStyle } from "./styles/GlobalStyle";

@@ -12,7 +12,7 @@ const NavButton: React.FC<Props> = ({ children }) => {
 
 const Main = styled(motion.button)(
 	({ theme }) => `
-  background: orange;
+  // background: orange;
   height: 100%
 `
 );
