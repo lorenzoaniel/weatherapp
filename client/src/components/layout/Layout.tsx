@@ -11,8 +11,9 @@ interface Props {
 const Layout: React.FC<Props> = ({ children }) => {
 	const theme = useTheme();
 
+	//TODO: replace static "season" with dynamic redux from API
 	return (
-		<Main {...default_motion} variants={_MotionVariants(theme).Main}>
+		<Main {...default_motion} variants={_MotionVariants(theme, "winter").Main}>
 			<Content>{children}</Content>
 			<Footer>
 				<Navbar />
@@ -46,18 +47,16 @@ const Content = styled(motion.section)(
 `
 );
 
-const _MotionVariants = (theme: DefaultTheme) => {
+const _MotionVariants = (theme: any, season?: string) => {
 	return {
 		Main: {
 			initial: {
-				background:
-					"linear-gradient(rgb(255,181,167) 100%, rgb(252,213,206) 100%, rgb(248,237,235) 100%, rgb(249,220,196) 100%, rgb(254,200,154) 100%)",
+				background: theme.layout.background[season + "initial"],
 			},
 			animate: {
-				background:
-					"linear-gradient(rgb(255,181,167) 20%, rgb(252,213,206) 40%, rgb(248,237,235) 60%, rgb(249,220,196) 80%, rgb(254,200,154) 100%)",
+				background: theme.layout.background[season + "animate"],
 				transition: {
-					duration: 2,
+					duration: 1,
 				},
 			},
 		},
