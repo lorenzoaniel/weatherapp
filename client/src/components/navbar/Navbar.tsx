@@ -1,28 +1,26 @@
 import { motion } from "framer-motion";
 import React from "react";
-import styled, { useTheme } from "styled-components";
+import styled from "styled-components";
 
 import { CgProfile, CgHome, CgLogOut } from "react-icons/cg";
 import NavButton from "../button/NavButton";
-import { IconBaseProps } from "react-icons/lib/esm/iconBase";
-import { default_ThemeType } from "../../styles/themes/default_Theme";
+import { icon_Mixins } from "../../styles/mixins/icon_Mixins";
 
 const Navbar: React.FC = () => {
 	const userLoggedInTest = false; //TODO: move to redux
-	const theme = useTheme();
 
 	return (
 		<Main>
 			<NavButton>
-				<CgHome />
+				<CgHome style={icon_Mixins.navButtonStyle} />
 			</NavButton>
 			{userLoggedInTest ? (
 				<NavButton>
-					<CgLogOut />
+					<CgLogOut style={icon_Mixins.navButtonStyle} />
 				</NavButton>
 			) : (
 				<NavButton>
-					<CgProfile />
+					<CgProfile style={icon_Mixins.navButtonStyle} />
 				</NavButton>
 			)}
 		</Main>
@@ -32,9 +30,12 @@ const Navbar: React.FC = () => {
 const Main = styled(motion.nav)(
 	({ theme }) => `
 	background: red;
-  display: flex;
 	height: 100%;
+  display: flex;
 	justify-content: space-around;
+
+	// margin: 1.5rem;
+	padding: 0.5rem;
 `
 );
 
