@@ -1,12 +1,10 @@
-import { css } from "styled-components";
-
 export const flex_Mixins = {
-	flxCntrCntr: css`
+	flxCntrCntr: `
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	`,
-	flxColCntrCntr: css`
+	flxColCntrCntr: `
 		display: flex;
 		justify-content: center;
 		align-items: center;
