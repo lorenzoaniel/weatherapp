@@ -1,9 +1,20 @@
+import { flex_Mixins } from "./../mixins/flex_Mixins";
 import { icon_Mixins } from "../mixins/icon_Mixins";
-import { flex_Mixins } from "../mixins/flex_Mixins";
 
 export const default_Theme = {
 	mixins: {
 		icon: icon_Mixins,
+		flex: flex_Mixins,
+	},
+	boxshadow: {
+		light: "0 0 0.5rem 0.1rem rgba(0,0,0,0.2)",
+	},
+	border: {
+		radius: {
+			navbar: "2rem",
+			navbuttonRight: "0 1.5rem 1.5rem 0",
+			navbuttonLeft: "1.5rem 0 0 1.5rem",
+		},
 	},
 	color: {
 		spring1: "255, 181, 167",

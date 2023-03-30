@@ -11,15 +11,15 @@ const Navbar: React.FC = () => {
 
 	return (
 		<Main>
-			<NavButton>
+			<NavButton isLeft={true}>
 				<CgHome style={icon_Mixins.navButtonStyle} />
 			</NavButton>
 			{userLoggedInTest ? (
-				<NavButton>
+				<NavButton isLeft={false}>
 					<CgLogOut style={icon_Mixins.navButtonStyle} />
 				</NavButton>
 			) : (
-				<NavButton>
+				<NavButton isLeft={false}>
 					<CgProfile style={icon_Mixins.navButtonStyle} />
 				</NavButton>
 			)}
@@ -29,12 +29,16 @@ const Navbar: React.FC = () => {
 
 const Main = styled(motion.nav)(
 	({ theme }) => `
-	// background: ;
+	background: rgba(255,255,255,0.2);
 	height: 100%;
   display: flex;
 	justify-content: space-around;
 
-	padding: 0.5rem;
+	// padding: 1rem;
+	column-gap: 0.2rem;
+	border-radius: ${theme.border.radius.navbar};
+	backdrop-filter: blur(5rem);
+	box-shadow: ${theme.boxshadow.light};
 `
 );
 

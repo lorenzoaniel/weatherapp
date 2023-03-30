@@ -6,7 +6,7 @@ interface initialState {
 }
 
 const initialState: initialState = {
-	season: "summer", //TODO: set to "" and grab api data first
+	season: "winter", //TODO: set to "" and grab api data first
 };
 
 export const weatherApiSlice = createSlice({

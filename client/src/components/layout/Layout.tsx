@@ -41,15 +41,14 @@ const Main = styled(motion.main)(
 
 const Footer = styled(motion.section)(
 	({ theme }) => `
-	// background: yellow;
-  height: 5%;
+	padding: 1rem;
+  height: 7%;
 `
 );
 
 const Content = styled(motion.section)(
 	({ theme }) => `
-  height: 90%;
-	// background: green;
+  height: 89%;
 `
 );
 

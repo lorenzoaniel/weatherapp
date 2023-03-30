@@ -6,7 +6,7 @@ import { FlattenSimpleInterpolation, css } from "styled-components";
 
 export const icon_Mixins: any = {
 	navButtonStyle: {
-		height: "100%",
-		width: "100%",
+		height: "80%",
+		width: "80%",
 	},
 };
