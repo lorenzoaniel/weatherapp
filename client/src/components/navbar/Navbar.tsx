@@ -38,7 +38,7 @@ const Main = styled(motion.nav)(
 	column-gap: 0.2rem;
 	border-radius: ${theme.border.radius.navbar};
 	backdrop-filter: blur(5rem);
-	box-shadow: ${theme.boxshadow.light};
+	box-shadow: 0 0.5rem 0.5rem 0.1rem rgba(0,0,0,0.2);
 `
 );
 
