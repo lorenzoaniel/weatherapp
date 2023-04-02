@@ -1,31 +1,36 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
+import WeatherIcons from "../icons/WeatherIcons";
 
 interface Props {
-	weather: any;
-	location: any;
-	userId: any;
-	tempHigh: any;
-	tempLow: any;
-	date: any;
-	percipitation: any;
-	humidty: any;
-	wind: any;
+	data: {
+		weather: any;
+		location: any;
+		userId: any;
+		tempHigh: any;
+		tempLow: any;
+		date: any;
+		percipitation: any;
+		humidity: any;
+		wind: any;
+	};
 }
 
-const Card: React.FC<Props> = ({
-	tempHigh,
-	tempLow,
-	weather,
-	location,
-	userId,
-	date,
-	percipitation,
-	humidty,
-	wind,
-}) => {
-	return <div>Card</div>;
+const Card: React.FC<Props> = ({ data }) => {
+	return (
+		<Main>
+			<WeatherIcons iconId={"113"} isDay={false} />
+		</Main>
+	);
 };
+
+const Main = styled(motion.div)(
+	({ theme }) => `
+  background: orange;
+  height: 80%;
+  width: 70%;
+`
+);
 
 export default Card;
